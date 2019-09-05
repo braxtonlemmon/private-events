@@ -1,24 +1,6 @@
-# README
+# Ruby on Rails Associations Project
+based on The Odin Project [curriculum](https://www.theodinproject.com/lessons/associations)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+In this project I am asked to create an application in Ruby on Rails that allows users to create events and attend events. The event host manages the event details and user signups.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+I will be utilizing the skills I have developed thus far in the curriculum.
