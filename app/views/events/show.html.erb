@@ -1,2 +1,14 @@
-<h1><%= @event.description %></h1>
-<h3>Event creator: <%= @event.creator.name %></h3>
+<h1><%= @event.description.upcase %></h1>
+<b>Event creator:</b>
+<span><%= @event.creator.name.capitalize %></span>
+
+<h2>Attendees:</h2>
+<% if @attendees.any? %>
+	<ol>
+		<% @attendees.each do |attendee| %>
+			<li>
+				<%= attendee.name.capitalize %>
+			</li>
+		<% end %>
+	</ol>
+<% end %>

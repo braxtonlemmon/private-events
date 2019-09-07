@@ -1,10 +1,19 @@
 <h1>All events</h1>
 
+<h3>Upcoming:</h3>
 <ol class="events">
-	<% @events.each do |event|%>
+	<% @upcoming.each do |event|%>
 		<li>
 			<%= link_to event.description, '#' %>
 		</li>
 	<% end %>
 </ol>
 
+<h3>Past:</h3>
+<ol class="events">
+	<% @past.each do |event|%>
+		<li>
+			<%= link_to event.description, '#' %>
+		</li>
+	<% end %>
+</ol>
