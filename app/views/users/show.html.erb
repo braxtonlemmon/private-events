@@ -1,4 +1,18 @@
-<h1>Welcome, <%= @user.name %>!</h1>
-<p>
-	email: <%= @user.email %>
-</p>
+<div>
+	<h1>Welcome, <%= @user.name %>!</h1>
+	<p>
+		email: <%= @user.email %>
+	</p>
+</div>
+<div>
+  <% if @user.events.any? %>
+		<h3>Your events</h3>
+		<ol class="events">
+			<% @events.each do |event|%>
+				<li>
+					<%= link_to event.description, '#' %>
+				</li>
+			<% end %>
+		</ol>
+	<% end %>
+</div> 

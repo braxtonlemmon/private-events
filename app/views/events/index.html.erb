@@ -1,0 +1,10 @@
+<h1>All events</h1>
+
+<ol class="events">
+	<% @events.each do |event|%>
+		<li>
+			<%= link_to event.description, '#' %>
+		</li>
+	<% end %>
+</ol>
+
