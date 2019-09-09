@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 			log_in @user
 			redirect_to @user
 		else
-			redirect_to root_url
+			render 'new'
 		end
 	end
 end
