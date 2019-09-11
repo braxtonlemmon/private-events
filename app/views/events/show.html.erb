@@ -1,9 +1,14 @@
 <h1><%= @event.description.upcase %></h1>
-<p><b>Event creator: </b><%= @event.creator.name %></p>
-<p><b>Date: </b><%= @event.date.strftime("%B %e, %Y") %></p>
-<% if current_user == @event.creator %>
-	<%= link_to 'Invite people to your event!', '#' %>
-<% end %>
+<div>
+	<p><b>Event creator: </b><%= @event.creator.name %></p>
+	<p><b>Date: </b><%= @event.date.strftime("%B %e, %Y") %></p>
+	<% if current_user == @event.creator %>
+		<%= link_to 'Invite people to your event!', '#' %>
+	<% else %>
+		<b>Invitation:</b>
+		Not yet invited
+	<% end %>
+</div>
 
 <h2>Attendees:</h2>
 <% if @attendees.any? %>
@@ -14,4 +19,6 @@
 			</li>
 		<% end %>
 	</ol>
+<% else %>
+	<h4>No attendees for this event.</h4>
 <% end %>
