@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 			flash[:success] = "You've successfully signed up!"
 			redirect_to @user
 		else
-			flash.now[:error] = "Unsuccessful sign up."
+			flash.now[:danger] = "Unsuccessful sign up."
 			render :new
 		end
   end
