@@ -1,2 +1,54 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+/* mixins, variables, etc. */
+
+@mixin box_sizing {
+	-moz-box-sizing:    border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing:         border-box;
+}
+
+/* universal */
+
+body {
+	padding-top: 60px;
+}
+
+/* header */
+
+#current-user {
+	float: left;
+	color: blue;
+
+	letter-spacing: -1px;
+	padding: 8px 8px;
+	border: 2px dotted orange;
+	&:hover {
+		color: orange;
+		text-decoration: none;
+		cursor: default;
+		border: 2px dotted blue;
+	}
+}
+/* miscellaneous */ 
+
+.debug_dump {
+	clear: both;
+	float: left;
+	width: 99%;
+	margin-top: 60px;
+	@include box_sizing;
+}
+
+.user-info {
+	margin-top: 60px;
+}
+
+.btn-primary {
+	float: center;
+}
+
+.jumbotron {
+	text-align: center;
+}
