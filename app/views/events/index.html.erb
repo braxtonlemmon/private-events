@@ -5,6 +5,7 @@
 	<% @upcoming.each do |event|%>
 		<li>
 			<%= link_to event.description, event %>
+			(<%= event.date.strftime("%B %e, %Y") %>)
 		</li>
 	<% end %>
 </ol>
@@ -14,6 +15,7 @@
 	<% @past.each do |event|%>
 		<li>
 			<%= link_to event.description, event %>
+			(<%= event.date.strftime("%B %e, %Y") %>)
 		</li>
 	<% end %>
 </ol>
