@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		if @user.save
+			@user.update_attribute(:name, @user.name.capitalize)
 			log_in(@user)
 			flash[:success] = "You've successfully signed up!"
 			redirect_to @user
@@ -20,6 +21,10 @@ class UsersController < ApplicationController
 		@events = @user.events
 		@upcoming_events = @user.upcoming_events
 		@prev_events = @user.previous_events
+	end
+	
+	def index
+		@users = User.all 
 	end
 	
 	private

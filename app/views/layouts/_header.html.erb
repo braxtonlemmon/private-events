@@ -3,10 +3,11 @@
 	  <h2 id='logo'>HAPPENING</h2>
 	  <nav>
 		  <ul class="nav navbar-nav navbar-right">
-				<li><%= link_to 'Home', root_url %></li>
+				<li><%= link_to 'Home', current_user %></li>
 				<% if logged_in? %>
-					<li><%= link_to 'My Events', current_user %></li>
-					<li><%= link_to 'Log out', logout_path, method: :delete %></li>
+					<li><%= link_to 'New Event ', new_event_path %></li>
+					<li><%= link_to 'Users', users_path %></li>
+					<li><%= link_to 'Logout', logout_path, method: :delete %></li>
 				<% else %>
 				  <li><%= link_to 'Sign up', new_user_path %></li>
 					<li><%= link_to 'Log in', login_path %></li>

@@ -4,7 +4,7 @@
 <ol class="events">
 	<% @upcoming.each do |event|%>
 		<li>
-			<%= link_to event.description, '#' %>
+			<%= link_to event.description, event %>
 		</li>
 	<% end %>
 </ol>
@@ -13,7 +13,7 @@
 <ol class="events">
 	<% @past.each do |event|%>
 		<li>
-			<%= link_to event.description, '#' %>
+			<%= link_to event.description, event %>
 		</li>
 	<% end %>
 </ol>

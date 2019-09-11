@@ -11,7 +11,7 @@
 		<ol class="events">
 			<% @events.each do |event|%>
 				<li>
-					<%= link_to event.description.capitalize, '#' %>
+					<%= link_to event.description.capitalize, event %>
 				</li>
 			<% end %>
 		</ol>
@@ -22,7 +22,7 @@
 	  <h3>Events you are attending:</h3>
 		<ol class="events">
 		  <% @upcoming_events.each do |event| %>
-				<li><%= link_to event.description.capitalize, '#' %></li>
+				<li><%= link_to event.description.capitalize, event %></li>
 			<% end %>
 		</ol>
 	<% end %>
@@ -32,7 +32,7 @@
 	  <h3>Previous events:</h3>
 		<ol class="events">
 		  <% @prev_events.each do |event| %>
-				<li><%= link_to event.description.capitalize, '#' %></li>
+				<li><%= link_to event.description.capitalize, event %></li>
 			<% end %>
 		</ol>
 	<% end %>
