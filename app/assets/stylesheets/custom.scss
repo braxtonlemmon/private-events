@@ -17,20 +17,27 @@ body {
 
 /* header */
 
-#current-user {
+#logo {
 	float: left;
-	color: blue;
-
-	letter-spacing: -1px;
-	padding: 8px 8px;
-	border: 2px dotted orange;
+	margin-right: 10px;
+	font-size: 1.5em;
+	color: red;
+	font-weight: bold;
 	&:hover {
-		color: orange;
+		color: pink;
 		text-decoration: none;
 		cursor: default;
-		border: 2px dotted blue;
 	}
 }
+
+/* footer */
+footer {
+	margin-top: 50px;
+	padding-top: 5px;
+	border-top: 1px solid gray;
+}
+
+
 /* miscellaneous */ 
 
 .debug_dump {
