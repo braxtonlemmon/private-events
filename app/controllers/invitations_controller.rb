@@ -8,8 +8,10 @@ class InvitationsController < ApplicationController
 	end
 
 	def create
-		@event = Event.find(params[:invitation][:attended_event_id])
-		@invitation = @event.invitations.build(invitation_params)
+		# @event = Event.find(params[:invitation][:attended_event_id])
+		# @invitation = @event.invitations.build(invitation_params)
+		
+		@invitation = Invitation.new(invitation_params)
 		if @invitation.save
 			flash[:success] = 'Invitation sent!'
 			redirect_to current_user

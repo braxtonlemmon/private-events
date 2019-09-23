@@ -6,3 +6,7 @@ class Invitation < ApplicationRecord
 	validates :attendee_id, presence: true
 	validates :host_id, presence: true
 end
+
+# build an invitation from the chosen event 
+# @invitation = @event.invitations.build(invitation_params)
+# something like that

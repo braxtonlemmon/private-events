@@ -9,12 +9,14 @@
 		  <%= f.label :attended_event_id %>
 			<%= f.select :attended_event_id, options_for_select(@events.map do |event|
 																														[event.description, event.id]
-																													end) %>
+																													end),
+																			 { :prompt => 'Select event' } %>
 
 			<%= f.label :attendee_id %>
 			<%= f.select :attendee_id, options_for_select(@users.map do |user|
 																											[user.name, user.id]
-																										end) %>
+																										end),
+																 { :prompt => 'Select friend' } %>
 
 		  <%= f.submit 'Invite' %>
 		<% end %>
