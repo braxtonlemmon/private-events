@@ -5,43 +5,10 @@
 		email: <%= @user.email %>
 	</p>
 </div>
-<div>
-  <% if @user.events.any? %>
-		<h3>Hosting:</h3>
-		<ol class="events">
-			<% @events.each do |event|%>
-				<li>
-					<%= link_to event.description.capitalize, event %>
-					(<%= event.date.strftime("%B %e, %Y") %>) 
-				</li>
-			<% end %>
-		</ol>
-	<% end %>
-</div>
-<div>
-  <% if @upcoming_events.any? %>
-	  <h3>Attending:</h3>
-		<ol class="events">
-		  <% @upcoming_events.each do |event| %>
-				<li>
-					<%= link_to event.description.capitalize, event %>
-					(<%= event.date.strftime("%B %e, %Y") %>)
-				</li>
-			<% end %>
-		</ol>
-	<% end %>
-</div>
-<div>
-  <% if @prev_events.any? %>
-	  <h3>Previous:</h3>
-		<ol class="events">
-		  <% @prev_events.each do |event| %>
-				<li>
-					<%= link_to event.description.capitalize, event %>
-					(<%= event.date.strftime("%B %e, %Y") %>)	
-				</li>
-			<% end %>
-		</ol>
-	<% end %>
-</div>
+
+<%= render 'shared/events_list', object: @user.events, name: 'Hosting' %>
+<%= render 'shared/events_list', object: @upcoming_events, name: 'Upcoming' %>
+<%= render 'shared/events_list', object: @prev_events, name: 'Previous' %>
+<%= render 'shared/events_list', object: @invited_events, name: 'Invited' %>
+
  

@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 		@events = @user.events
 		@upcoming_events = @user.upcoming_events
 		@prev_events = @user.previous_events
+		@invited_events = @user.attended_events.where('pending')
 	end
 	
 	def index

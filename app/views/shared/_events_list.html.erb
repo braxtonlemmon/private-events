@@ -1,0 +1,13 @@
+<div>
+	<% if object.any? %>
+		<h3><%= name %></h3>
+		<ol class="events">
+			<% object.each do |event| %>
+				<li>
+					<%= link_to event.description.capitalize, event %>
+					(<%= event.date.strftime("%B %e, %Y") %>)	
+				</li>
+			<% end %>
+		</ol>
+	<% end %>
+</div>
