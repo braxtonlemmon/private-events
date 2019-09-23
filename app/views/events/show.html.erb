@@ -3,7 +3,7 @@
 	<p><b>Event creator: </b><%= @event.creator.name %></p>
 	<p><b>Date: </b><%= @event.date.strftime("%B %e, %Y") %></p>
 	<% if current_user == @event.creator %>
-		<%= link_to 'Invite people to your event!', '#' %>
+		<%= render 'shared/invitation_form' %>
 	<% else %>
 		<b>Invitation:</b>
 		Not yet invited

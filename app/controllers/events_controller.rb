@@ -12,6 +12,8 @@ class EventsController < ApplicationController
   end
 
 	def show
+		@invitation = current_user.invitations.build
+		@users = User.where.not(id: current_user.id)
 		@event = Event.find(params[:id])
 		@attendees = @event.attendees
   end
