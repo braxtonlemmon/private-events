@@ -1,0 +1,22 @@
+<%= provide(:title, 'Invite friends') %>
+<h1>Invite friends</h1>
+
+<div class='row'>
+  <div class='col-md-6' col-md-offset-3'>
+	  <%= form_for(@invitation) do |f| %>
+			<%= f.hidden_field :host_id, value: current_user.id %>
+
+		  <%= f.label :attended_event_id %>
+			<%= f.select :attended_event_id, options_for_select(@events.map do |event|
+																														[event.description, event.id]
+																													end) %>
+
+			<%= f.label :attendee_id %>
+			<%= f.select :attendee_id, options_for_select(@users.map do |user|
+																											[user.name, user.id]
+																										end) %>
+
+		  <%= f.submit 'Invite' %>
+		<% end %>
+	</div>
+</div>
