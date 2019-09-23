@@ -1,0 +1,7 @@
+<ol>
+	<% object.each do |guest| %>
+		<li>
+			<%= link_to guest.name.capitalize, guest %>
+		</li>
+	<% end %>
+</ol>

@@ -14,6 +14,7 @@ class InvitationsController < ApplicationController
 	private
 
 		def invitation_params
-			params.require(:invitation).permit(:attendee_id, :attended_event_id, :host_id)
+			params[:invitation][:pending] = true
+			params.require(:invitation).permit(:attendee_id, :attended_event_id, :host_id, :pending, :accepted, :rejected)
 		end
 end

@@ -15,7 +15,9 @@ class EventsController < ApplicationController
 		@invitation = current_user.invitations.build
 		@users = User.where.not(id: current_user.id)
 		@event = Event.find(params[:id])
-		@attendees = @event.attendees
+		@invited = @event.attendees.where('pending')
+		@accepted = @event.attendees.where('accepted')
+		@rejected = @event.attendees.where('rejected')
   end
 
 	def index

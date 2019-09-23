@@ -2,23 +2,20 @@
 <div>
 	<p><b>Event creator: </b><%= @event.creator.name %></p>
 	<p><b>Date: </b><%= @event.date.strftime("%B %e, %Y") %></p>
-	<% if current_user == @event.creator %>
+	<% if !@users.empty? && current_user == @event.creator %>
 		<%= render 'shared/invitation_form' %>
 	<% else %>
-		<b>Invitation:</b>
-		Not yet invited
+		No one to invite yet
 	<% end %>
 </div>
 
-<h2>Attendees:</h2>
-<% if @attendees.any? %>
-	<ol>
-		<% @attendees.each do |attendee| %>
-			<li>
-				<%= attendee.name.capitalize %>
-			</li>
-		<% end %>
-	</ol>
-<% else %>
-	<h4>No attendees for this event.</h4>
-<% end %>
+<h2>Invited:</h2>
+<%= render 'guest_list', object: @invited %>
+<h2>Attending:</h2>
+<%= render 'guest_list', object: @accepted %>
+<h2>Rejected:</h2>
+<%= render 'guest_list', object: @rejected %>
+
+
+
+
