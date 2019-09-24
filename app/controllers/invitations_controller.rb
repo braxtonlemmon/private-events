@@ -11,6 +11,13 @@ class InvitationsController < ApplicationController
 		end
 	end
 
+	def update
+		params.inspect
+		@invitation = Invitation.find(params[:id])
+		params[:choice] == '1' ? accept(@invitation) : reject(@invitation)
+		redirect_to current_user
+	end
+
 	private
 
 		def invitation_params

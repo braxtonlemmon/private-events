@@ -5,4 +5,5 @@ class Invitation < ApplicationRecord
 	validates :attended_event_id, presence: true
 	validates :attendee_id, presence: true
 	validates :host_id, presence: true
+
 end

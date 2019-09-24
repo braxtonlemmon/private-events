@@ -5,7 +5,13 @@
 			<% object.each do |event| %>
 				<li>
 					<%= link_to event.description.capitalize, event %>
-					(<%= event.date.strftime("%B %e, %Y") %>)	
+					(<%= event.date.strftime("%B %e, %Y") %>)
+					<% if name == 'Invited' %>
+						<%= link_to 'Accept', invitation_path(id: find_invitation(event), choice: 1),
+																	method: :put %> or
+						<%= link_to 'Reject', invitation_path(find_invitation(event), choice: 0),
+																	method: :put %> 
+					<% end %>	
 				</li>
 			<% end %>
 		</ol>
