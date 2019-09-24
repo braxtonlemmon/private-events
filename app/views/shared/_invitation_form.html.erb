@@ -2,7 +2,7 @@
 	<%= f.hidden_field :host_id, value: current_user.id %>
 	<%= f.hidden_field :attended_event_id, value: @event.id %>
 
-	<%= f.label :attendee_id %>
+	<%= f.label :attendee_id, 'Invite:' %>
 	<%= f.select :attendee_id, options_for_select(@users.map do |user|
 																									[user.name, user.id]
 																								end),
