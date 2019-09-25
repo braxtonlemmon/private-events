@@ -2,10 +2,10 @@ Rails.application.routes.draw do
 	# Static Pages
 	root 'static_pages#home'
 	
-	get 'events/new'
-  get 'events/create'
-  get 'events/show'
-  get 'events/index'
+	get  '/signup',   to: 'users#new'
+  get  'events/create'
+  get  'events/show'
+  get  'events/index'
 	
 	# Users
 	resources :users

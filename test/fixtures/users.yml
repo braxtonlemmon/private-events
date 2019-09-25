@@ -1,0 +1,17 @@
+braxton:
+  name: Braxton Lemmon
+  email: braxton@example.com
+
+dani:
+  name: Dani Peterson
+  email: dani@example.com
+
+tommy:
+  name: Tommy Bean
+  email: tommy@example.com
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  name:  <%= "User #{n}" %>
+  email: <%= "user-#{n}@example.com" %>
+<% end %>
